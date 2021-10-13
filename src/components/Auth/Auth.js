@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {LogginContext} from "../../context/LogginContext";
 
 const Auth = () => {
+	const {setIsLoggedIn} = useContext(LogginContext);
 	return (
-		<div>
-			<h1>Loggin</h1>
-		</div>
+		<>
+
+			<h2>Username :</h2>
+			<input type="text" placeholder="username"/>
+			<button onClick={() => {
+				setIsLoggedIn(true);
+			}}> Login
+			</button>
+		</>
 	);
 };
 
