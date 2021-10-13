@@ -1,48 +1,104 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
+// import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import styled from 'styled-components';
+import {FiMenu} from "react-icons/fi";
+
 
 import MainHeader from './MainHeader';
-import NavLinks from './NavLinks';
-import SideDrawer from './SideDrawer';
-import Backdrop from '../UIElements/Backdrop';
+// import NavLinks from './NavLinks';
+import SideDrawer from "./SideDrawer";
+import Backdrop from "../UIElements/Backdrop";
 import './MainNavigation.css';
 
+const NavBtn = styled.button`
+  width: 3rem;
+  height: 3rem;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 1rem;
+  cursor: pointer;
+`;
+const AuthBtn = styled.button`
+  display: block;
+  margin-right: 2rem;
+  background: var(--dark-color);
+  border: none;
+  font-size: 1rem;
+  a{
+    color: var(--light-color);
+	text-decoration: none;
+  }
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+const Nav = styled.nav`
+  background: var(--dark-color);
+  display: flex;
+`;
+const Logo = styled.div`
+  height: 1rem;
+  width: 5rem;
+  color: var(--light-color);
+  a {
+	display: flex;
+	color: var(--light-color);
+	margin: 0 1rem 0 0;
+	text-decoration: none;
+  }
+`;
+
+
 const MainNavigation = props => {
-  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+	const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
-  const openDrawer = () => {
-    setDrawerIsOpen(true);
-  };
+	const openDrawer = () => {
+		setDrawerIsOpen(true);
+	};
 
-  const closeDrawer = () => {
-    setDrawerIsOpen(false);
-  };
+	const closeDrawer = () => {
+		setDrawerIsOpen(false);
+	};
 
-  return (
-    <React.Fragment>
-      {drawerIsOpen && <Backdrop onClick={closeDrawer} />}
-      {drawerIsOpen && (
-        <SideDrawer>
-          <nav className="main-navigation__drawer-nav">
-            <NavLinks />
-          </nav>
-        </SideDrawer>
-      )}
-      <MainHeader>
-        <button className="main-navigation__menu-btn" onClick={openDrawer}>
-          <span />
-          <span />
-          <span />
-        </button>
-        <h1 className="main-navigation__title">
-          <Link to="/">YourPlaces</Link>
-        </h1>
-        <nav className="main-navigation__header-nav">
-          <NavLinks />
-        </nav>
-      </MainHeader>
-    </React.Fragment>
-  );
+	return (
+		<React.Fragment>
+			{drawerIsOpen && <Backdrop onClick={closeDrawer}/>}
+			{drawerIsOpen && (
+				<SideDrawer>
+					<nav className="main-navigation__drawer-nav">
+						<h2>Title</h2>
+						<ul>
+							<li>
+								<NavLink to="/" onClick={closeDrawer}>Home</NavLink>
+							</li>
+							<li>
+								<NavLink to="/auth" onClick={closeDrawer}>Login</NavLink>
+							</li>
+						</ul>
+					</nav>
+				</SideDrawer>
+			)}
+			<MainHeader>
+				<NavBtn onClick={openDrawer} id="hamburger">
+					<FiMenu/>
+				</NavBtn>
+
+				<Nav>
+					<Logo>
+						<NavLink to="/">Home</NavLink>
+					</Logo>
+					<AuthBtn>
+						<NavLink to="/auth">Login</NavLink>
+					</AuthBtn>
+				</Nav>
+			</MainHeader>
+		</React.Fragment>
+	);
 };
 
 export default MainNavigation;
