@@ -43,7 +43,7 @@ const MainNavigation = props => {
 							</li>
 
 							<li>
-								<NavLink to="/auth" onClick={closeDrawer}>Login</NavLink>
+								<NavLink to="/auth"  onClick={()=>setIsLoggedIn(false)}>Login</NavLink>
 							</li>
 						</ul>
 					</nav>
@@ -66,9 +66,9 @@ const MainNavigation = props => {
 					<Logo>
 						<NavLink to="/">Home</NavLink>
 					</Logo>
-					<AuthBtn onClick={()=>setIsLoggedIn(true)}>
-						<NavLink to="/auth">Login</NavLink>
-					</AuthBtn>
+					{/*<AuthBtn onClick={()=>setIsLoggedIn(true)}>*/}
+					{/*	<NavLink to="/auth">Login</NavLink>*/}
+					{/*</AuthBtn>*/}
 				</Nav>}
 
 			</MainHeader>
