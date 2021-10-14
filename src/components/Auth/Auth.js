@@ -8,21 +8,27 @@ const Auth = () => {
 	const {setIsLoggedIn} = useContext(LogginContext);
 	const [name, setName] =useState('');
 	const [email, setEmail] =useState('');
+	const [people, setPeople]= useState([]);
+	console.log(people);
 	const nameHandler=(e)=>{
-		console.log(e.target.value);
 		setName(e.target.value)
 	}
 	const emailHandler=(e)=>{
 		setEmail(e.target.value)
+
 	}
 	const logHandler =(e)=>{
 		e.preventDefault();
 		if(name.length > 3 && email.length > 6){
+			const person = {name, email};
+			setPeople((item)=>{
+				return [...item, person]
+			})
+			setName('');
+			setEmail('');
 			setIsLoggedIn(true);
 		}
-		// if(email.length> 6){
-		// 	setIsLoggedIn(true);
-		// }
+
 
 	}
 	return (
