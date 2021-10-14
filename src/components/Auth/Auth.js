@@ -70,13 +70,13 @@ const ContainerLogin = styled.div`
   &:hover {
     background: #e3e3e3;
   }
-  @media (max-width: 768px){
+  @media (max-width: 480px){
 	margin: 2rem 0 0 0;
-    height: 450px;
+    height: 500px;
 	width: 350px;
   }
   @media (max-width: 320px){
-    margin: 2rem 0 0 0;
+    margin: 1rem 0 0 0;
     height: 450px;
     width: 300px;
   }
@@ -91,14 +91,15 @@ const InputLogin = styled.input`
   border-radius: var(--radius);
   transition: var(--transition);
   outline: none;
-
   &:hover {
     border: 1px solid black;
   }
-
   &:focus {
     background: #ffffe0;
     transition: var(--transition);
+  }
+  @media (max-width: 768px){
+	margin: .5rem 1rem;
   }
 `;
 
@@ -106,6 +107,9 @@ const Title = styled.h1`
   text-align: center;
   text-transform: capitalize;
   margin: 3rem 0 0 0;
+  @media (max-width: 768px){
+    margin: 0;
+  }
 `;
 const BtnLogin = styled.button`
   margin: 6rem 1rem;
@@ -122,6 +126,9 @@ const BtnLogin = styled.button`
     background: #cfcfcf;
     color: var(--light-color);
   }
+  @media (max-width: 768px){
+    margin: 4rem 1rem 0 1rem;
+  }
 `;
 const Account = styled.div`
   display: flex;
@@ -134,6 +141,9 @@ const Account = styled.div`
 	text-transform: capitalize;
 	color: var(--blue);
 	text-decoration: none;
+  }
+  @media (max-width: 320px){
+   font-size: var(--font-sm);
   }
 `
 const FormLogIn = styled.form`
