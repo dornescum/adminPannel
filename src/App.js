@@ -12,6 +12,8 @@ import Galerie from "./components/Galerie/Galerie";
 import Auth from "./components/Auth/Auth";
 import Profile from "./components/Auth/Profile";
 import {LogginContext} from "./context/LogginContext";
+import DespreFirma from "./components/DespreFirma/DespreFirma";
+import DateFiscale from "./components/DateFiscale/DateFiscale";
 
 
 function App() {
@@ -29,6 +31,22 @@ function App() {
 				<Route path="/galerie" exact>
 					<Galerie/>
 				</Route>
+				<Route path="/despre-firma" exact>
+					<DespreFirma />
+				</Route>
+				<Route path="/date-fiscale" exact>
+					<DateFiscale />
+				</Route>
+				<Route path="/despre-firma" exact>
+					<DespreFirma />
+				</Route>
+				<Route path="/despre-firma" exact>
+					<DespreFirma />
+				</Route>
+
+
+
+
 				<Route path="/" exact>
 					<Auth/>
 				</Route>

@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {LogginContext} from "../../context/LogginContext";
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import {NavLink} from "react-router-dom";
 
 
@@ -15,7 +15,6 @@ const Auth = () => {
 	}
 	const emailHandler=(e)=>{
 		setEmail(e.target.value)
-
 	}
 	const logHandler =(e)=>{
 		e.preventDefault();
@@ -28,17 +27,15 @@ const Auth = () => {
 			setEmail('');
 			setIsLoggedIn(true);
 		}
-
-
 	}
 	return (
 		<Wrapper>
 			<ContainerLogin>
 				<Title>Log in</Title>
 				<FormLogIn action="" onSubmit={logHandler}>
-					<InputLogin placeholder="Name" value={name} onChange={nameHandler} required/>
-					<InputLogin placeholder="Email" value={email} onChange={emailHandler} required/>
-					<BtnLogin >Login</BtnLogin>
+					<InputLogin placeholder="Name" valid={name} value={name} onChange={nameHandler} required/>
+					<InputLogin placeholder="Email" valid={email} value={email} onChange={emailHandler} required/>
+					<BtnLogin type='submit'>Login</BtnLogin>
 				</FormLogIn>
 
 				<Account>
@@ -87,7 +84,9 @@ const ContainerLogin = styled.div`
     width: 300px;
   }
 `;
-const InputLogin = styled.input`
+const InputLogin = styled.input.attrs((props)=>{
+	return {placeholder: props.placeholder || 'please enter value' }
+})`
   border: 1px solid #ccc;
   height: 20px;
   position: relative;
@@ -97,6 +96,10 @@ const InputLogin = styled.input`
   border-radius: var(--radius);
   transition: var(--transition);
   outline: none;
+
+  //&:active {
+  //  border: 1px solid #ccc;
+  //}
   &:hover {
     border: 1px solid black;
   }
@@ -117,7 +120,11 @@ const Title = styled.h1`
     margin: 0;
   }
 `;
-const BtnLogin = styled.button`
+// attrs(type: 'button')
+const BtnLogin = styled.button.attrs((props)=>{
+	// dc exista type definit foloseste pe ala altfel button
+	return {type: props.type || 'button'}
+})`
   margin: 6rem 1rem;
   padding: 1rem;
   color: var(--dark-color);
@@ -156,3 +163,11 @@ const FormLogIn = styled.form`
 display: flex;
   flex-direction: column;
 `
+
+// ${({valid})=>{
+// 	return valid ? css`
+//         border: 1px solid #ccc;
+//       ` :css`
+//         border: 1px solid red;
+//       `
+// }}

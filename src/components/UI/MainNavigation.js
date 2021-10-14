@@ -15,7 +15,6 @@ import './MainNavigation.css';
 import {LogginContext} from "../../context/LogginContext";
 
 
-
 const MainNavigation = props => {
 	const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
@@ -42,14 +41,39 @@ const MainNavigation = props => {
 							<li>
 								<NavLink to="/galerie" onClick={closeDrawer}>Galerie foto</NavLink>
 							</li>
+							<li>
+								<NavLink to="/despre-firma" onClick={closeDrawer}>despre firma</NavLink>
+							</li>
+							<li>
+								<NavLink to="/date-fiscale" onClick={closeDrawer}>date fiscale</NavLink>
+							</li>
+							<li>
+								<NavLink to="/despre-firma" onClick={closeDrawer}>tipuri lucrari</NavLink>
+							</li>
+							<li>
+								<NavLink to="/despre-firma" onClick={closeDrawer}>mesaje</NavLink>
+							</li>
+							<li>
+								<NavLink to="/despre-firma" onClick={closeDrawer}>date contact</NavLink>
+							</li>
+							<li>
+								<NavLink to="/despre-firma" onClick={closeDrawer}>tipuri abonamente</NavLink>
+							</li>
+							<li>
+								<NavLink to="/despre-firma" onClick={closeDrawer}>statistici</NavLink>
+							</li>
+
 
 							<li>
-								<NavLink to="/auth"  onClick={()=>setIsLoggedIn(false)}>Logout</NavLink>
+								<NavLink to="/profile" onClick={closeDrawer}>Profil</NavLink>
+							</li>
+							<li>
+								<NavLink to="/auth" onClick={() => setIsLoggedIn(false)}>Logout</NavLink>
 							</li>
 						</ul>}
 						{!isLoggedIn && <ul>
 							<li>
-								<NavLink to="/"  onClick={()=>setIsLoggedIn(true)}>Login</NavLink>
+								<NavLink to="/" onClick={() => setIsLoggedIn(true)}>Login</NavLink>
 							</li>
 							{/*<li>*/}
 							{/*	<NavLink to="/profile">Profile</NavLink>*/}
@@ -67,9 +91,9 @@ const MainNavigation = props => {
 					<Logo>
 						<NavLink to="/">Home</NavLink>
 					</Logo>
-					<AuthBtn >
-						<NavLink to="/" onClick={()=>setIsLoggedIn(false)}>
-							<FaChevronRight />
+					<AuthBtn>
+						<NavLink to="/" onClick={() => setIsLoggedIn(false)}>
+							<FaChevronRight/>
 						</NavLink>
 					</AuthBtn>
 				</Nav>
@@ -113,7 +137,7 @@ const AuthBtn = styled.button`
   }
 
   @media (max-width: 768px) {
-	//fixme dc ramane
+    //fixme dc ramane
     //display: none;
   }
 `;
