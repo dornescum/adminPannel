@@ -1,29 +1,47 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {LogginContext} from "../../context/LogginContext";
 import styled from 'styled-components';
+import {NavLink} from "react-router-dom";
 
 
 const Auth = () => {
 	const {setIsLoggedIn} = useContext(LogginContext);
+	const [name, setName] =useState('');
+	const [email, setEmail] =useState('');
+	const nameHandler=(e)=>{
+		console.log(e.target.value);
+		setName(e.target.value)
+	}
+	const emailHandler=(e)=>{
+		setEmail(e.target.value)
+	}
+	const logHandler =(e)=>{
+		e.preventDefault();
+		if(name.length > 3 && email.length > 6){
+			setIsLoggedIn(true);
+		}
+		// if(email.length> 6){
+		// 	setIsLoggedIn(true);
+		// }
+
+	}
 	return (
 		<Wrapper>
-			{/*<h1>Loggin</h1>*/}
-
 			<ContainerLogin>
 				<Title>Log in</Title>
-				<InputLogin placeholder="Name"/>
-				<InputLogin placeholder="Email"/>
-				<BtnLogin onClick={() => {
-					setIsLoggedIn(true);
-				}}>Login</BtnLogin>
+				<FormLogIn action="" onSubmit={logHandler}>
+					<InputLogin placeholder="Name" value={name} onChange={nameHandler} required/>
+					<InputLogin placeholder="Email" value={email} onChange={emailHandler} required/>
+					<BtnLogin >Login</BtnLogin>
+				</FormLogIn>
+
+				<Account>
+					<p>Dont have an account yet ?
+						<NavLink to="/profile">Go here</NavLink>
+					</p>
+				</Account>
 			</ContainerLogin>
 
-			{/*<h2>Username :</h2>*/}
-			{/*<input type="text" placeholder="username"/>*/}
-			{/*<button onClick={() => {*/}
-			{/*	setIsLoggedIn(true);*/}
-			{/*}}> Login*/}
-			{/*</button>*/}
 		</Wrapper>
 	);
 };
@@ -99,9 +117,26 @@ const BtnLogin = styled.button`
   border: none;
   box-shadow: var(--light-shadow);
   transition: var(--transition);
-
+	cursor: pointer;
   &:hover {
     background: #cfcfcf;
     color: var(--light-color);
   }
 `;
+const Account = styled.div`
+  display: flex;
+  justify-content: space-around;
+	p{
+	  padding: 1rem;
+	}
+  a {
+	padding: 1rem;
+	text-transform: capitalize;
+	color: var(--blue);
+	text-decoration: none;
+  }
+`
+const FormLogIn = styled.form`
+display: flex;
+  flex-direction: column;
+`

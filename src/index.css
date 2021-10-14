@@ -24,6 +24,7 @@ main {
     --light-color: #ffffff;
     --dark-color: #727272;
     --background: #ededed;
+    --blue:#007bff;
 
 
     --transition: all 0.3s linear;

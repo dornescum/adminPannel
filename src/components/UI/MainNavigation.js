@@ -1,8 +1,9 @@
 import React, {useState, useContext} from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 import {FiMenu} from "react-icons/fi";
+import {FaChevronRight} from "react-icons/fa";
 
 
 import MainHeader from './MainHeader';
@@ -34,7 +35,7 @@ const MainNavigation = props => {
 				<SideDrawer>
 					<nav className="main-navigation__drawer-nav">
 						<h2>Title</h2>
-						<ul>
+						{isLoggedIn && <ul>
 							<li>
 								<NavLink to="/" onClick={closeDrawer}>Date pricipale</NavLink>
 							</li>
@@ -43,9 +44,18 @@ const MainNavigation = props => {
 							</li>
 
 							<li>
-								<NavLink to="/auth"  onClick={()=>setIsLoggedIn(false)}>Login</NavLink>
+								<NavLink to="/auth"  onClick={()=>setIsLoggedIn(false)}>Logout</NavLink>
 							</li>
-						</ul>
+						</ul>}
+						{!isLoggedIn && <ul>
+							<li>
+								<NavLink to="/"  onClick={()=>setIsLoggedIn(true)}>Login</NavLink>
+							</li>
+							{/*<li>*/}
+							{/*	<NavLink to="/profile">Profile</NavLink>*/}
+							{/*</li>*/}
+						</ul>}
+
 					</nav>
 				</SideDrawer>
 			)}
@@ -58,13 +68,15 @@ const MainNavigation = props => {
 						<NavLink to="/">Home</NavLink>
 					</Logo>
 					<AuthBtn >
-						<NavLink to="/" onClick={()=>setIsLoggedIn(false)}>Logout</NavLink>
+						<NavLink to="/" onClick={()=>setIsLoggedIn(false)}>
+							<FaChevronRight />
+						</NavLink>
 					</AuthBtn>
 				</Nav>
 				}
 				{!isLoggedIn && <Nav>
 					<Logo>
-						<NavLink to="/">Home</NavLink>
+						<NavLink to="/profile">Profile</NavLink>
 					</Logo>
 					{/*<AuthBtn onClick={()=>setIsLoggedIn(true)}>*/}
 					{/*	<NavLink to="/auth">Login</NavLink>*/}
@@ -101,7 +113,8 @@ const AuthBtn = styled.button`
   }
 
   @media (max-width: 768px) {
-    display: none;
+	//fixme dc ramane
+    //display: none;
   }
 `;
 const Nav = styled.nav`
