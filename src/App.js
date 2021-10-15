@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import './App.css';
+// import './App.css';
 import MainNavigation from "./components/UI/MainNavigation";
 import {
 	BrowserRouter as Router,
@@ -11,16 +11,21 @@ import DatePrincipale from "./components/DatePrincipale/DatePrincipale";
 import Galerie from "./components/Galerie/Galerie";
 import Auth from "./components/Auth/Auth";
 import Profile from "./components/Auth/Profile";
-import {LogginContext} from "./context/LogginContext";
 import DespreFirma from "./components/DespreFirma/DespreFirma";
 import DateFiscale from "./components/DateFiscale/DateFiscale";
+import TipuriLucrari from "./components/TipuriLucrari/TipuriLucrari";
+import Mesaje from "./components/Messaje/Mesaje";
+import DateContact from "./components/DateContact/DateContact";
+import TipuriAbonamente from "./components/TipuriAbonamente/TipuriAbonamente";
+import Statistici from "./components/Satistici/Statistici";
+
+
+import {LogginContext} from "./context/LogginContext";
+import GlobalStyle from "./components/UIElements/GlobalStyle";
 
 
 function App() {
-	// const [showProfile, setShowProfile]= useState(false);
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-	// {showProfile ? <Profile/> : <Auth />}
 	let routes;
 	if (isLoggedIn) {
 		routes = (
@@ -32,26 +37,36 @@ function App() {
 					<Galerie/>
 				</Route>
 				<Route path="/despre-firma" exact>
-					<DespreFirma />
+					<DespreFirma/>
 				</Route>
 				<Route path="/date-fiscale" exact>
-					<DateFiscale />
+					<DateFiscale/>
 				</Route>
-				<Route path="/despre-firma" exact>
-					<DespreFirma />
+				<Route path="/tipuri-lucrari" exact>
+					<TipuriLucrari/>
 				</Route>
-				<Route path="/despre-firma" exact>
-					<DespreFirma />
+				<Route path="/mesaje" exact>
+					<Mesaje/>
 				</Route>
 
+				<Route path="/date-contact" exact>
+					<DateContact/>
+				</Route>
 
+				<Route path="/tipuri-abonamente" exact>
+					<TipuriAbonamente/>
+				</Route>
+
+				<Route path="/statistici" exact>
+					<Statistici />
+				</Route>
 
 
 				<Route path="/" exact>
 					<Auth/>
 				</Route>
-				<Route path="/" exact>
-					<Profile />
+				<Route path="/profile" exact>
+					<Profile/>
 				</Route>
 				<Redirect to="/"/>
 			</Switch>
@@ -61,14 +76,13 @@ function App() {
 	// else {
 	// 	routes = (
 	// 		<Switch>
-	// 			<Route path="/auth" exact>
-	// 				<Auth />
+	// 			<Route path="/" exact>
+	// 				<Auth/>
 	// 			</Route>
 	// 			<Route path="/profile" exact>
 	// 				<Profile/>
 	// 			</Route>
-	//
-	// 			<Redirect to="/auth" />
+	// 			<Redirect to="/" exact />
 	// 		</Switch>
 	// 	);
 	//
@@ -79,8 +93,9 @@ function App() {
 		<LogginContext.Provider value={{isLoggedIn, setIsLoggedIn}}>
 			<Router>
 				<MainNavigation/>
+				<GlobalStyle />
 				<main>
-					{isLoggedIn ? routes : <Auth />}
+					{isLoggedIn ? routes : <Auth/>}
 					{/*{isLoggedIn && routes}*/}
 
 				</main>

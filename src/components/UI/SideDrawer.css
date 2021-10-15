@@ -4,16 +4,24 @@
   top: 0;
   z-index: 100;
   height: 100vh;
-  width: 50%;
-
+  width: 20%;
   /*background: var(--dark-color);*/
   background: rgb(130,130,130);
   background: linear-gradient(90deg, rgba(130,130,130,1) 17%, rgba(189,189,189,1) 93%);
-
-
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   animation:anim-left .2s ease-in-out;
 }
+@media (max-width: 768px) {
+  .side-drawer{
+    width: 40%;
+  }
+}
+@media (max-width: 480px) {
+  .side-drawer{
+    width: 60%;
+  }
+}
+
 .side-drawer h2 {
   padding: var(--font-lg);
 }

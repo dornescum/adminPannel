@@ -48,19 +48,19 @@ const MainNavigation = props => {
 								<NavLink to="/date-fiscale" onClick={closeDrawer}>date fiscale</NavLink>
 							</li>
 							<li>
-								<NavLink to="/despre-firma" onClick={closeDrawer}>tipuri lucrari</NavLink>
+								<NavLink to="/tipuri-lucrari" onClick={closeDrawer}>tipuri lucrari</NavLink>
 							</li>
 							<li>
-								<NavLink to="/despre-firma" onClick={closeDrawer}>mesaje</NavLink>
+								<NavLink to="/mesaje" onClick={closeDrawer}>mesaje</NavLink>
 							</li>
 							<li>
-								<NavLink to="/despre-firma" onClick={closeDrawer}>date contact</NavLink>
+								<NavLink to="/date-contact" onClick={closeDrawer}>date contact</NavLink>
 							</li>
 							<li>
-								<NavLink to="/despre-firma" onClick={closeDrawer}>tipuri abonamente</NavLink>
+								<NavLink to="/tipuri-abonamente" onClick={closeDrawer}>tipuri abonamente</NavLink>
 							</li>
 							<li>
-								<NavLink to="/despre-firma" onClick={closeDrawer}>statistici</NavLink>
+								<NavLink to="/statistici" onClick={closeDrawer}>statistici</NavLink>
 							</li>
 
 
