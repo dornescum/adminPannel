@@ -9,6 +9,7 @@ export const Card = styled.div`
   margin: 10px 0;
   padding: 10px;
   width: 100%;
+  justify-content:  ${({ justify }) => justify || 'flex-start'};;
   flex-direction: ${({ layout }) => layout || 'row'};
   img {
     width: 25%;
