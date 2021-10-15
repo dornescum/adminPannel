@@ -47,6 +47,20 @@
   left: 0;
 
 }
+@media (max-width: 960px) {
+  .side-drawer h2 {
+    padding: .5rem 0 .5rem 1rem;
+  }
+  .side-drawer{
+    width: 30%;
+  }
+  .side-drawer ul {
+    font-size: var(--font-sm);
+  }
+  .side-drawer ul li {
+    padding: .4rem 1rem .4rem .3rem ;
+  }
+}
 @media (max-width: 768px) {
   .side-drawer{
     width: 40%;
@@ -55,7 +69,7 @@
     font-size: var(--font-sm);
   }
   .side-drawer ul li {
-    padding: .3rem 1rem .3rem .2rem ;
+    padding: .5rem 1rem .5rem .1rem ;
   }
 }
 @media (max-width: 480px) {

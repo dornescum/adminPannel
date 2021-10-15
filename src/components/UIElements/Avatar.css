@@ -14,3 +14,12 @@
   height: 100%;
   object-fit: cover;
 }
+@media (max-width: 960px){
+  .avatar {
+    padding: .3rem 0 .3rem 1rem;
+  }
+  .avatar img {
+    height: 2rem;
+    width: 2rem;
+  }
+}

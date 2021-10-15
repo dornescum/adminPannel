@@ -39,7 +39,6 @@ const MainNavigation = props => {
 					<nav className="main-navigation__drawer-nav">
 						<h2>My Company</h2>
 						<Avatar image={image} alt='Eva' width='5rem' height='5rem'/>
-						{/*<img src={image} alt="Eva" style={{width:'1rem', height: '1rem'}}/>*/}
 						{isLoggedIn && <>
 							<ul>
 								<li>
@@ -108,12 +107,11 @@ const MainNavigation = props => {
 				</NavBtn>
 				{isLoggedIn && <Nav bg='var(--dark-color)'>
 					<Logo>
-						<NavLink to="/">Home</NavLink>
+						<NavLink to="/">My Company</NavLink>
 					</Logo>
 					<AuthBtn>
 						<NavLink to="/" onClick={() => setIsLoggedIn(false)}>
-							{/*<FaChevronRight/>*/}
-							{/*<FaPlay />*/}
+
 							<FaSignOutAlt />
 						</NavLink>
 					</AuthBtn>
@@ -147,7 +145,7 @@ const NavBtn = styled.button`
 `;
 const AuthBtn = styled.button`
   display: block;
-  margin-right: 2rem;
+  margin-right: 4rem;
   background: var(--dark-color);
   border: none;
   font-size: 1rem;
@@ -160,6 +158,8 @@ const AuthBtn = styled.button`
   @media (max-width: 768px) {
     //fixme dc ramane
     //display: none;
+    margin-right: 2rem;
+
   }
 `;
 const Nav = styled.nav`
@@ -169,7 +169,7 @@ const Nav = styled.nav`
 `;
 const Logo = styled.div`
   height: 1rem;
-  width: 5rem;
+  width: 8rem;
   color: var(--light-color);
 
   a {
