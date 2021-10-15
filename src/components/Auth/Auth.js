@@ -9,7 +9,7 @@ const Auth = () => {
 	const [name, setName] =useState('');
 	const [email, setEmail] =useState('');
 	const [people, setPeople]= useState([]);
-	console.log(people);
+	// console.log(people);
 	const nameHandler=(e)=>{
 		setName(e.target.value)
 	}

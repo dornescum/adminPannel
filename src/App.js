@@ -22,6 +22,7 @@ import Statistici from "./components/Satistici/Statistici";
 
 import {LogginContext} from "./context/LogginContext";
 import GlobalStyle from "./components/UIElements/GlobalStyle";
+import ThemeP from "./components/UIElements/ThemeProvider";
 
 
 function App() {
@@ -91,7 +92,11 @@ function App() {
 
 	return (
 		<LogginContext.Provider value={{isLoggedIn, setIsLoggedIn}}>
+
+
+
 			<Router>
+				{/*<ThemeP>*/}
 				<MainNavigation/>
 				<GlobalStyle />
 				<main>
@@ -99,6 +104,7 @@ function App() {
 					{/*{isLoggedIn && routes}*/}
 
 				</main>
+				{/*</ThemeP>*/}
 			</Router>
 		</LogginContext.Provider>
 

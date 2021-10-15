@@ -1,9 +1,13 @@
 import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {NavLink} from 'react-router-dom';
+import Avatar from "../UIElements/Avatar";
+
 import styled from 'styled-components';
 import {FiMenu} from "react-icons/fi";
-import {FaChevronRight} from "react-icons/fa";
+import {FaChevronRight, FaPlay, FaShare, FaSignOutAlt} from "react-icons/fa";
+// FaSignOutAlt
+import image from '../../assets/img/Eva.jpg'
 
 
 import MainHeader from './MainHeader';
@@ -33,44 +37,59 @@ const MainNavigation = props => {
 			{drawerIsOpen && (
 				<SideDrawer>
 					<nav className="main-navigation__drawer-nav">
-						<h2>Title</h2>
-						{isLoggedIn && <ul>
-							<li>
-								<NavLink to="/" onClick={closeDrawer}>Date pricipale</NavLink>
-							</li>
-							<li>
-								<NavLink to="/galerie" onClick={closeDrawer}>Galerie foto</NavLink>
-							</li>
-							<li>
-								<NavLink to="/despre-firma" onClick={closeDrawer}>despre firma</NavLink>
-							</li>
-							<li>
-								<NavLink to="/date-fiscale" onClick={closeDrawer}>date fiscale</NavLink>
-							</li>
-							<li>
-								<NavLink to="/tipuri-lucrari" onClick={closeDrawer}>tipuri lucrari</NavLink>
-							</li>
-							<li>
-								<NavLink to="/mesaje" onClick={closeDrawer}>mesaje</NavLink>
-							</li>
-							<li>
-								<NavLink to="/date-contact" onClick={closeDrawer}>date contact</NavLink>
-							</li>
-							<li>
-								<NavLink to="/tipuri-abonamente" onClick={closeDrawer}>tipuri abonamente</NavLink>
-							</li>
-							<li>
-								<NavLink to="/statistici" onClick={closeDrawer}>statistici</NavLink>
-							</li>
+						<h2>My Company</h2>
+						<Avatar image={image} alt='Eva' width='5rem' height='5rem'/>
+						{/*<img src={image} alt="Eva" style={{width:'1rem', height: '1rem'}}/>*/}
+						{isLoggedIn && <>
+							<ul>
+								<li>
+									<NavLink to="/" onClick={closeDrawer}>Date pricipale</NavLink>
+								</li>
+								<li>
+									<NavLink to="/galerie" onClick={closeDrawer}>Galerie foto</NavLink>
+								</li>
+								<li>
+									<NavLink to="/despre-firma" onClick={closeDrawer}>despre firma</NavLink>
+								</li>
+								<li>
+									<NavLink to="/date-fiscale" onClick={closeDrawer}>date fiscale</NavLink>
+								</li>
+								<li>
+									<NavLink to="/tipuri-lucrari" onClick={closeDrawer}>tipuri lucrari</NavLink>
+								</li>
+								<li>
+									<NavLink to="/mesaje" onClick={closeDrawer}>mesaje</NavLink>
+								</li>
+								<li>
+									<NavLink to="/date-contact" onClick={closeDrawer}>date contact</NavLink>
+								</li>
+								<li>
+									<NavLink to="/tipuri-abonamente" onClick={closeDrawer}>tipuri abonamente</NavLink>
+								</li>
+								<li>
+									<NavLink to="/statistici" onClick={closeDrawer}>statistici</NavLink>
+								</li>
 
 
-							<li>
-								<NavLink to="/profile" onClick={closeDrawer}>Profil</NavLink>
-							</li>
-							<li>
-								<NavLink to="/auth" onClick={() => setIsLoggedIn(false)}>Logout</NavLink>
-							</li>
-						</ul>}
+								<li>
+									<NavLink to="/profile" onClick={closeDrawer}>Profil</NavLink>
+								</li>
+								<li>
+									<NavLink to="/auth" onClick={() => setIsLoggedIn(false)}>Logout</NavLink>
+								</li>
+							</ul>
+							<div className='side_footer'>
+								<ul>
+									<li>
+										<a href="">phone</a>
+									</li>
+									<li>
+										<a href="">email</a>
+									</li>
+
+								</ul>
+							</div>
+						</>}
 						{!isLoggedIn && <ul>
 							<li>
 								<NavLink to="/" onClick={() => setIsLoggedIn(true)}>Login</NavLink>
@@ -87,13 +106,15 @@ const MainNavigation = props => {
 				<NavBtn onClick={openDrawer} id="hamburger">
 					<FiMenu/>
 				</NavBtn>
-				{isLoggedIn && <Nav>
+				{isLoggedIn && <Nav bg='var(--dark-color)'>
 					<Logo>
 						<NavLink to="/">Home</NavLink>
 					</Logo>
 					<AuthBtn>
 						<NavLink to="/" onClick={() => setIsLoggedIn(false)}>
-							<FaChevronRight/>
+							{/*<FaChevronRight/>*/}
+							{/*<FaPlay />*/}
+							<FaSignOutAlt />
 						</NavLink>
 					</AuthBtn>
 				</Nav>
@@ -142,7 +163,8 @@ const AuthBtn = styled.button`
   }
 `;
 const Nav = styled.nav`
-  background: var(--dark-color);
+  //background: var(--dark-color);
+  background: ${({bg})=> bg};
   display: flex;
 `;
 const Logo = styled.div`
