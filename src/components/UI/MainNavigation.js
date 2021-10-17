@@ -42,31 +42,31 @@ const MainNavigation = props => {
 						{isLoggedIn && <>
 							<ul>
 								<li>
-									<NavLink to="/" onClick={closeDrawer}>Date pricipale</NavLink>
+									<NavLink to="/" exact onClick={closeDrawer} activeClassName='active-btn'>Date pricipale</NavLink>
 								</li>
 								<li>
-									<NavLink to="/galerie" onClick={closeDrawer}>Galerie foto</NavLink>
+									<NavLink to="/galerie" onClick={closeDrawer} activeClassName='active-btn'>Galerie foto</NavLink>
 								</li>
 								<li>
-									<NavLink to="/despre-firma" onClick={closeDrawer}>despre firma</NavLink>
+									<NavLink to="/despre-firma" onClick={closeDrawer} activeClassName='active-btn'>despre firma</NavLink>
 								</li>
 								<li>
-									<NavLink to="/date-fiscale" onClick={closeDrawer}>date fiscale</NavLink>
+									<NavLink to="/date-fiscale" onClick={closeDrawer} activeClassName='active-btn'>date fiscale</NavLink>
 								</li>
 								<li>
-									<NavLink to="/tipuri-lucrari" onClick={closeDrawer}>tipuri lucrari</NavLink>
+									<NavLink to="/tipuri-lucrari" onClick={closeDrawer} activeClassName='active-btn'>tipuri lucrari</NavLink>
 								</li>
 								<li>
-									<NavLink to="/mesaje" onClick={closeDrawer}>mesaje</NavLink>
+									<NavLink to="/mesaje" onClick={closeDrawer} activeClassName='active-btn'>mesaje</NavLink>
 								</li>
 								<li>
-									<NavLink to="/date-contact" onClick={closeDrawer}>date contact</NavLink>
+									<NavLink to="/date-contact" onClick={closeDrawer} activeClassName='active-btn'>date contact</NavLink>
 								</li>
 								<li>
-									<NavLink to="/tipuri-abonamente" onClick={closeDrawer}>tipuri abonamente</NavLink>
+									<NavLink to="/tipuri-abonamente" onClick={closeDrawer} activeClassName='active-btn'>tipuri abonamente</NavLink>
 								</li>
 								<li>
-									<NavLink to="/statistici" onClick={closeDrawer}>statistici</NavLink>
+									<NavLink to="/statistici" onClick={closeDrawer} activeClassName='active-btn'>statistici</NavLink>
 								</li>
 
 
@@ -179,3 +179,7 @@ const Logo = styled.div`
     text-decoration: none;
   }
 `;
+const Active = styled.button`
+background: red;
+  color: white;
+`

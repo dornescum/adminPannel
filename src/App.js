@@ -53,16 +53,12 @@ function App() {
 				<Route path="/date-contact" exact>
 					<DateContact/>
 				</Route>
-
 				<Route path="/tipuri-abonamente" exact>
 					<TipuriAbonamente/>
 				</Route>
-
 				<Route path="/statistici" exact>
 					<Statistici />
 				</Route>
-
-
 				<Route path="/" exact>
 					<Auth/>
 				</Route>
@@ -74,35 +70,32 @@ function App() {
 		);
 
 	}
-	// else {
-	// 	routes = (
-	// 		<Switch>
-	// 			<Route path="/" exact>
-	// 				<Auth/>
-	// 			</Route>
-	// 			<Route path="/profile" exact>
-	// 				<Profile/>
-	// 			</Route>
-	// 			<Redirect to="/" exact />
-	// 		</Switch>
-	// 	);
-	//
-	// }
+	else {
+		routes = (
+			<Switch>
+				<Route path="/auth" exact>
+					<Auth/>
+				</Route>
+				{/*<Redirect to="/" exact />*/}
+				<Route path="/profile" exact>
+					<Profile/>
+				</Route>
+				{/*<Redirect to="/" exact />*/}
+			</Switch>
+		);
 
+	}
+	console.log(isLoggedIn && routes);
 
 	return (
 		<LogginContext.Provider value={{isLoggedIn, setIsLoggedIn}}>
-
-
-
 			<Router>
 				{/*<ThemeP>*/}
 				<MainNavigation/>
 				<GlobalStyle />
 				<main>
-					{isLoggedIn ? routes : <Auth/>}
-					{/*{isLoggedIn && routes}*/}
-
+					{/*{isLoggedIn ? routes : <Auth/>}*/}
+					{routes}
 				</main>
 				{/*</ThemeP>*/}
 			</Router>
