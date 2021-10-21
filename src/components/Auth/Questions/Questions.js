@@ -10,7 +10,7 @@ const Questions = () => {
 
 			<QuestionContainer>
 				<h3>questions and answers about login</h3>
-				<section className='info'>
+				<section>
 					{questions.map((item) => {
 						return (
 							// {...item} !!!
@@ -26,7 +26,17 @@ const Questions = () => {
 export default Questions;
 
 const QuestionContainer = styled.div`
-  margin: 4rem 0 0 0;
+  margin: 5rem 0 0 0;
   background: var(--background);
-  width: 450px;
+  width: 28.125rem;
+  @media (max-width: 768px){
+	width: 28rem;
+  }
+  @media (max-width: 340px){
+    width: 18.75rem;
+	margin: 4rem .5rem  0 .5rem;
+  }
+  h3 {
+	text-align: center;
+  }
 `

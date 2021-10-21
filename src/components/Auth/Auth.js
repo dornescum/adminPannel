@@ -29,6 +29,9 @@ const Auth = () => {
 			setIsLoggedIn(true);
 		}
 	}
+	const accountCreate = ()=>{
+		alert('not ready yet')
+	}
 	return (
 		<Wrapper>
 			<ContainerLogin>
@@ -41,7 +44,7 @@ const Auth = () => {
 
 				<Account>
 					<p>Dont have an account yet ?
-						<NavLink to="/profile">Go here</NavLink>
+						<NavLink to="/profile" onClick={accountCreate}>Go here</NavLink>
 					</p>
 				</Account>
 			</ContainerLogin>
@@ -53,7 +56,7 @@ const Auth = () => {
 export default Auth;
 const Wrapper = styled.article`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-content: center;
   margin: 1rem 0 0 0;
   background: var(--background);
@@ -70,6 +73,7 @@ const ContainerLogin = styled.div`
   align-content: center;
   flex-direction: column;
   height: 550px;
+  height: 600px;
   width: 450px;
   background: #e8e8e8;
   border-radius: 15px;
