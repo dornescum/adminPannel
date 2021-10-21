@@ -36,7 +36,7 @@ const MainNavigation = props => {
 			{drawerIsOpen && <Backdrop onClick={closeDrawer}/>}
 			{drawerIsOpen && (
 				<SideDrawer>
-					<nav className="main-navigation__drawer-nav">
+					<nav>
 						<h2>My Company</h2>
 						<Avatar image={image} alt='Eva' width='5rem' height='5rem'/>
 						{isLoggedIn && <>

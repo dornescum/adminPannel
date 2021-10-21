@@ -22,7 +22,7 @@ import Statistici from "./components/Satistici/Statistici";
 
 import {LogginContext} from "./context/LogginContext";
 import GlobalStyle from "./components/UIElements/GlobalStyle";
-import ThemeP from "./components/UIElements/ThemeProvider";
+// import ThemeP from "./components/UIElements/ThemeProvider";
 
 
 function App() {
@@ -85,19 +85,16 @@ function App() {
 		);
 
 	}
-	console.log(isLoggedIn && routes);
 
 	return (
 		<LogginContext.Provider value={{isLoggedIn, setIsLoggedIn}}>
 			<Router>
-				{/*<ThemeP>*/}
 				<MainNavigation/>
 				<GlobalStyle />
 				<main>
 					{isLoggedIn ? routes : <Auth/>}
 					{/*{routes}*/}
 				</main>
-				{/*</ThemeP>*/}
 			</Router>
 		</LogginContext.Provider>
 

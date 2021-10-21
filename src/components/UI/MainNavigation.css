@@ -3,6 +3,5 @@
   stroke-width: 3;
 }
 .active-btn {
-  background: red;
-  color: white;
+  color: red !important;
 }
