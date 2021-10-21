@@ -77,9 +77,9 @@ function App() {
 					<Auth/>
 				</Route>
 				{/*<Redirect to="/" exact />*/}
-				<Route path="/profile" exact>
-					<Profile/>
-				</Route>
+				{/*<Route path="/profile" exact>*/}
+				{/*	<Profile/>*/}
+				{/*</Route>*/}
 				{/*<Redirect to="/" exact />*/}
 			</Switch>
 		);
@@ -94,8 +94,8 @@ function App() {
 				<MainNavigation/>
 				<GlobalStyle />
 				<main>
-					{/*{isLoggedIn ? routes : <Auth/>}*/}
-					{routes}
+					{isLoggedIn ? routes : <Auth/>}
+					{/*{routes}*/}
 				</main>
 				{/*</ThemeP>*/}
 			</Router>

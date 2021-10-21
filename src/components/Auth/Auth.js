@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 import {LogginContext} from "../../context/LogginContext";
 import styled, {css} from 'styled-components';
 import {NavLink} from "react-router-dom";
+import Questions from "./Questions/Questions";
 
 
 const Auth = () => {
@@ -44,7 +45,7 @@ const Auth = () => {
 					</p>
 				</Account>
 			</ContainerLogin>
-
+			<Questions />
 		</Wrapper>
 	);
 };
@@ -52,11 +53,16 @@ const Auth = () => {
 export default Auth;
 const Wrapper = styled.article`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-content: center;
   margin: 1rem 0 0 0;
   background: var(--background);
-  height: 100vh;
+  //height: 100vh;
+  @media (max-width: 768px){
+	flex-direction: column;
+    justify-content: center;
+	align-items: center;
+  }
 `;
 const ContainerLogin = styled.div`
   display: flex;
