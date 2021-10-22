@@ -10,7 +10,6 @@ const Auth = () => {
 	const [name, setName] =useState('');
 	const [email, setEmail] =useState('');
 	const [people, setPeople]= useState([]);
-	// console.log(people);
 	const nameHandler=(e)=>{
 		setName(e.target.value)
 	}
@@ -35,7 +34,7 @@ const Auth = () => {
 	return (
 		<Wrapper>
 			<ContainerLogin>
-				<Title>Log in</Title>
+				<Title data-testid='title-login'>Log in</Title>
 				<FormLogIn action="" onSubmit={logHandler}>
 					<InputLogin placeholder="Name" valid={name} value={name} onChange={nameHandler} required/>
 					<InputLogin placeholder="Email" valid={email} value={email} onChange={emailHandler} required/>
@@ -72,7 +71,7 @@ const ContainerLogin = styled.div`
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  height: 550px;
+  //height: 550px;
   height: 600px;
   width: 450px;
   background: #e8e8e8;

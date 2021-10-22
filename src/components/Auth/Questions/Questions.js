@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 const Questions = () => {
 	const [questions, setQuestions] = useState(data);
-	console.log(questions);
 	return (
 
 			<QuestionContainer>
