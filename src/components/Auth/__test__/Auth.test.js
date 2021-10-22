@@ -2,7 +2,6 @@ import {cleanup, fireEvent, getAllByRole, getByRole, render, screen} from '@test
 import Auth from "../Auth";
 import { BrowserRouter } from 'react-router-dom';
 
-
 test('the title should be Log In ', ()=>{
 	render(
 		<BrowserRouter>
