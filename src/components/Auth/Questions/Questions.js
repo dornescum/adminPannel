@@ -36,7 +36,7 @@ const QuestionContainer = styled.div`
   }
   @media (max-width: 340px){
     width: 18.75rem;
-	margin: 4rem .5rem  0 .5rem;
+	margin: 1rem .5rem  0 .5rem;
   }
   h3 {
 	text-align: center;

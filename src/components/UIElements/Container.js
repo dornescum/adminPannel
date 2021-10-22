@@ -14,8 +14,8 @@ export const Container = styled.div`
   @media(max-width: 768px){
     width: 640px;
   }
-  @media(max-width: 480px){
-    width: 420px;
+  @media(max-width: 380px){
+    width: 320px;
   }
   @media(max-width: 320px){
     width: 280px;

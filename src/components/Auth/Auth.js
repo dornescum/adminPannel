@@ -18,7 +18,8 @@ const Auth = () => {
 	}
 	const logHandler =(e)=>{
 		e.preventDefault();
-		if(name.length > 3 && email.length > 6 && email.includes('@')){
+	// && email.length > 6 && email.includes('@')
+		if(name.length > 3){
 			const person = {name, email};
 			setPeople((item)=>{
 				return [...item, person]
