@@ -40,10 +40,9 @@ const Auth = () => {
 					<InputLogin placeholder="Email" valid={email} value={email} onChange={emailHandler} required/>
 					<BtnLogin type='submit'>Login</BtnLogin>
 				</FormLogIn>
-
 				<Account>
 					<p>Dont have an account yet ?
-						<NavLink to="/profile" onClick={accountCreate}>Go here</NavLink>
+						<NavLink to="/profile" onClick={accountCreate} data-testid='go-here'>Go here</NavLink>
 					</p>
 				</Account>
 			</ContainerLogin>

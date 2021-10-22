@@ -31,6 +31,9 @@ const QuestionContainer = styled.div`
   @media (max-width: 768px){
 	width: 28rem;
   }
+  @media (max-width: 480px){
+    width: 20rem;
+  }
   @media (max-width: 340px){
     width: 18.75rem;
 	margin: 4rem .5rem  0 .5rem;

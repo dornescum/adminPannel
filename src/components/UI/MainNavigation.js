@@ -119,7 +119,7 @@ const MainNavigation = props => {
 				}
 				{!isLoggedIn && <Nav>
 					<Logo>
-						<NavLink to="/profile">Profile</NavLink>
+						<NavLink to="/" disabled={true}>Profile</NavLink>
 					</Logo>
 					{/*<AuthBtn onClick={()=>setIsLoggedIn(true)}>*/}
 					{/*	<NavLink to="/auth">Login</NavLink>*/}
