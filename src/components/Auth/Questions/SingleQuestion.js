@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {AiOutlineMinus, AiOutlinePlus} from 'react-icons/ai';
 import styled from "styled-components";
-import Questions from "./Questions";
+// import Questions from "./Questions";
 
 const SingleQuestion = ({title, info}) => {
 	const [showInfo, setShowInfo] = useState(false);

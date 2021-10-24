@@ -4,6 +4,7 @@ import {Flex} from "../UIElements/Flex";
 import {Card} from "../UIElements/Card";
 import {Description} from "../UIElements/Description";
 import {Article} from "../UIElements/Article";
+import FetchMessage from "./FetchMessage";
 
 import './mesaje.css'
 
@@ -28,6 +29,7 @@ const Mesaje = () => {
 					</li>
 				</ol>
 			</Article>
+			<FetchMessage />
 		</Container>
 	);
 };
