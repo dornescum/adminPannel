@@ -5,6 +5,7 @@ import {Card} from "../UIElements/Card";
 import {Description} from "../UIElements/Description";
 import {Article} from "../UIElements/Article";
 import FetchMessage from "./FetchMessage";
+import Paginate from "./Paginate";
 
 import './mesaje.css'
 
@@ -46,6 +47,7 @@ const Mesaje = () => {
 				</ol>
 			</Article>
 			<FetchMessage />
+			{/*<Paginate messagesPerPage={messagesPerPage} totalMessages={message}/>*/}
 
 		</Container>
 	);
@@ -53,33 +55,3 @@ const Mesaje = () => {
 
 export default Mesaje;
 
-
-//
-// <div className="col-lg-12">
-// 	<div className="card card-default" id="cardStatisticiGenerale">
-// 		<div className="card-wrapper">
-// 			<div className="card-body">
-// 				<p className="blockquote mb-4">Aici puteti regasi mesajele primite prin intermediul
-// 					formularului de contact din pagina dvs. de prezentare/profil.</p>
-// 				<h4 className="pl-2">Cum functioneaza?</h4>
-// 				<ol className="my-4 fs-18">
-// 					<li className="py-2">
-// 						Clientul intra pe pagina dvs. de prezentare, completeaza formularul de contact apoi
-// 						apasa butonul "<i>Trimite mesaj</i>".
-// 					</li>
-// 					<li className="py-2">
-// 						Noi validam mesajul (sa nu fie SPAM, sa nu contina injurii etc.), apoi il trimitem
-// 						mai departe catre dvs.
-// 					</li>
-// 					<li className="py-2">
-// 						Primiti un email cu toate detaliile si veti avea posibilitatea sa raspundeti direct
-// 						clientului, prin reply la email.
-// 					</li>
-//
-// 				</ol>
-// 			</div>
-// 		</div>
-// 	</div>
-//
-//
-// </div>
