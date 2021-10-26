@@ -1,10 +1,11 @@
 /* eslint-disable */
-// / <reference types="cypress" />
+/// <reference types="cypress" />
 
 describe('first test', ()=>{
 	 beforeEach(()=>{
 		 // eslint-disable-next-line no-undef
 		 // cy.visit('https://dornescu.ro')
+		 cy.visit('/')
 		 // cy.viewport("ipad-mini")
 		 // cy.viewport("macbook-13")
 	 })
@@ -41,6 +42,7 @@ describe('first test', ()=>{
 	});
 	it('should open menu on click hamburger icon ', function () {
 		// cy.viewport(1280, 720)
+		cy.pause()
 		cy.get('#hamburger > svg').click()
 	});
 	it('should alert on Go Here', function () {

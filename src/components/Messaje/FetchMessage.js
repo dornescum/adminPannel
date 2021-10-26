@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import SingleMessage from "./SingleMessage";
-import Paginate from "./Paginate";
+// import Paginate from "./Paginate";
+
+
 
 const FetchMessage = () => {
 	const [message, setMessage] = useState([]);
@@ -28,20 +30,21 @@ const FetchMessage = () => {
 		pageNumbers.push(i);
 	}
 	console.log(message);
-	console.log(pageNumbers);
+	console.log(currentMessages);
+	console.log(pageNumbers.length);
 	return (
 		<div>
 			{currentMessages.map((item) => {
 				return <div key={item.id}>
 					<SingleMessage  {...item}/>
-					<Paginate messagesPerPage={pageNumbers} totalMessages={message}/>
-					{/*<ul>*/}
-					{/*	{pageNumbers.map((item)=>{*/}
-					{/*		return	<li key={item.id}>*/}
-					{/*			<a href="!#">{item}</a>*/}
-					{/*		</li>*/}
-					{/*	})}*/}
-					{/*</ul>*/}
+					{/*<Paginate messagesPerPage={pageNumbers} totalMessages={message}/>*/}
+					<ul>
+						{pageNumbers.map((item)=>{
+							return	<li key={item.id}>
+								<a href="!#">{item}</a>
+							</li>
+						})}
+					</ul>
 				</div>;
 			})}
 		</div>

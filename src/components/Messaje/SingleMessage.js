@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
+import {FaChevronDown, FaChevronRight} from "react-icons/fa";
+
 
 
 const SingleMessage = ({title, body}) => {
@@ -8,7 +10,11 @@ const SingleMessage = ({title, body}) => {
 		setShowMessage(!showMessage);
 	};
 	return (<MainSingle data-testid='main-single' className={showMessage ? 'block': 'flex'} >
-			<Btn onClick={handleMessage}>X</Btn>
+			<Btn onClick={handleMessage}>
+				{showMessage && <FaChevronDown />}
+				{!showMessage && <FaChevronRight />}
+
+			</Btn>
 			<WrapperSingle>
 				{showMessage && <Single>
 					<h1>{title}</h1>
@@ -20,7 +26,7 @@ const SingleMessage = ({title, body}) => {
 				{/*	<h1>{title}</h1>*/}
 				{/*	<p>{body}</p>*/}
 				{/*</Single>*/}
-				{!showMessage && <h5 style={{padding: '0 1rem 0 0'}}>Hidden message</h5>}
+				{!showMessage && <Hidden>Hidden message from : <span>{title.slice(0,10)}</span></Hidden>}
 			</WrapperSingle>
 		</MainSingle>
 
@@ -33,7 +39,7 @@ export default SingleMessage;
 const Single = styled.div`
   //border: 1px solid var(--dark-color);
   padding: 1rem .5rem;
-  margin: 1rem 1rem 1rem 0;
+  //margin: 1rem 1rem 1rem 0;
   background: var(--light-color);
   border-radius: var(--radius);
   width: 100%;
@@ -54,7 +60,7 @@ const WrapperSingle = styled.div`
   position: relative;
 `;
 const Btn = styled.div`
-  background: red;
+  //background: red;
   height: 1rem;
   width: 1rem;
   position: relative;
@@ -65,4 +71,12 @@ const Btn = styled.div`
 const MainSingle = styled.div`
   //display: ${({flex})=> flex || 'block'}
   //justify-content: space-between;
+  background: var(--silver);
 `;
+const Hidden = styled.h5`
+  padding: 0 1rem 0 0;
+  span {
+	font-weight: bolder;
+	text-decoration: underline;
+  }
+`
