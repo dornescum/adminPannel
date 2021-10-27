@@ -3,30 +3,24 @@ import styled from "styled-components";
 import {FaChevronDown, FaChevronRight} from "react-icons/fa";
 
 
-
-const SingleMessage = ({title, body}) => {
+const SingleMessage = ({title, body, id}) => {
 	const [showMessage, setShowMessage] = useState(true);
 	const handleMessage = () => {
 		setShowMessage(!showMessage);
 	};
-	return (<MainSingle data-testid='main-single' className={showMessage ? 'block': 'flex'} >
-			<Btn onClick={handleMessage}>
-				{showMessage && <FaChevronDown />}
-				{!showMessage && <FaChevronRight />}
 
+	return (<MainSingle data-testid="main-single" className={showMessage ? 'block' : 'flex'}>
+			<Btn onClick={handleMessage}>
+				{showMessage && <FaChevronDown/>}
+				{!showMessage && <FaChevronRight/>}
 			</Btn>
 			<WrapperSingle>
-				{showMessage && <Single>
+
+				{showMessage && <Single id={id}>
 					<h1>{title}</h1>
 					<p>{body}</p>
 				</Single>}
-
-				{/*<Single>*/}
-				{/*	/!*<button onClick={setShowMessage(!showMessage)}>X</button>*!/*/}
-				{/*	<h1>{title}</h1>*/}
-				{/*	<p>{body}</p>*/}
-				{/*</Single>*/}
-				{!showMessage && <Hidden>Hidden message from : <span>{title.slice(0,10)}</span></Hidden>}
+				{!showMessage && <Hidden>Hidden message from : <span>{title.slice(0, 10)}</span></Hidden>}
 			</WrapperSingle>
 		</MainSingle>
 
@@ -69,14 +63,15 @@ const Btn = styled.div`
   z-index: 1;
 `;
 const MainSingle = styled.div`
-  //display: ${({flex})=> flex || 'block'}
+    //display: ${({flex}) => flex || 'block'}
   //justify-content: space-between;
   background: var(--silver);
 `;
 const Hidden = styled.h5`
   padding: 0 1rem 0 0;
+
   span {
-	font-weight: bolder;
-	text-decoration: underline;
+    font-weight: bolder;
+    text-decoration: underline;
   }
-`
+`;

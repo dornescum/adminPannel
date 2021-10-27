@@ -31,7 +31,8 @@ const GlobalStyle = createGlobalStyle`
 	--silver:#ededed;
     --danger: #e60000 ;
     --background: #ededed;
-    --blue:#007bff;
+    --blue:#5072a7;
+	--light-blue:#aec6cf;
 
 
     --transition: all 0.3s linear;
