@@ -29,6 +29,20 @@ export const Form = styled.form`
         transition: var(--transition);
       }
     }
+	
+	select {
+	  padding: .5rem;
+      &:hover{
+        background: var(--silver);
+        transition: var(--transition);
+      }
+
+      &:focus {
+        background: #ffffe0;
+        transition: var(--transition);
+      }
+	}
+
 	button {
 	  padding: 1rem;
 	  font-family: "Al Tarikh";
@@ -43,6 +57,25 @@ export const Form = styled.form`
         transition: var(--transition);
 		box-shadow: var(--dark-shadow);
       }
+	}
+  }
+  #check-bank {
+	padding: 0 1rem;
+	ul {
+	  list-style-type: none;
+	  display: flex;
+	  justify-content: space-between;
+	  align-content: center;
+	  margin: 0;
+	  li {
+		a {
+          text-decoration: none;
+		  font-size: var(--font-sm);
+		  color: var(--grey);
+		  padding: 0 1rem 0 0;
+		}
+		
+	  }
 	}
   }
 `;
