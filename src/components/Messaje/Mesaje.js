@@ -49,6 +49,7 @@ const Mesaje = () => {
 			<FetchMessage />
 			{/*<Paginate messagesPerPage={messagesPerPage} totalMessages={message}/>*/}
 
+
 		</Container>
 	);
 };

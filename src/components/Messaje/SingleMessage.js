@@ -11,8 +11,8 @@ const SingleMessage = ({title, body, id}) => {
 
 	return (<MainSingle data-testid="main-single" className={showMessage ? 'block' : 'flex'}>
 			<Btn onClick={handleMessage}>
-				{showMessage && <FaChevronDown/>}
-				{!showMessage && <FaChevronRight/>}
+				{showMessage && <FaChevronDown />}
+				{!showMessage && <FaChevronRight />}
 			</Btn>
 			<WrapperSingle>
 
@@ -54,13 +54,16 @@ const WrapperSingle = styled.div`
   position: relative;
 `;
 const Btn = styled.div`
-  //background: red;
-  height: 1rem;
-  width: 1rem;
+  background: var(--dark-color);
+  color: var(--light-color);
+  border-radius: 50%;
+  height: 1.1rem;
+  width: 1.1rem;
   position: relative;
   top: 2rem;
   left: 1rem;
   z-index: 1;
+  cursor: pointer;
 `;
 const MainSingle = styled.div`
     //display: ${({flex}) => flex || 'block'}

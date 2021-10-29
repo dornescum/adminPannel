@@ -1,52 +1,50 @@
 import React, {useState, useEffect} from 'react';
 import SingleMessage from "./SingleMessage";
-// import Paginate from "./Paginate";
+import Paginate from "./Paginate";
 
 
 
 const FetchMessage = () => {
-	const [message, setMessage] = useState([]);
+	const [posts, setPosts] = useState([]);
 	const [loading, setLoading]=useState(false);
 	const [currentPage, setCurrentPage]=useState(1);
-	const [messagesPerPage, setMessagesPerPage]= useState(10);
+	const [postsPerPage, setPostsPerPage]= useState(10);
 
 	useEffect(() => {
 		const fetchMess = async () => {
 			setLoading(true);
-			const res = await fetch('https://jsonplaceholder.typicode.com/posts/');
+			const res = await fetch('https://jsonplaceholder.typicode.com/posts');
 			const data = await res.json();
-			setMessage(data);
+			setPosts(data);
 			setLoading(false)
 		};
 		fetchMess();
 	}, []);
 
-	const indexOfLastMessage = currentPage * messagesPerPage;
-	const indexOfFirstMessage = indexOfLastMessage - messagesPerPage;
-	const currentMessages = message.slice(indexOfFirstMessage, indexOfLastMessage);
+	const indexOfLastPosts = currentPage * postsPerPage;
+	const indexOfFirstPosts = indexOfLastPosts - postsPerPage;
+	const currentPosts = posts.slice(indexOfFirstPosts, indexOfLastPosts);
 	// ===========
 	const pageNumbers = [];
-	for (let i = 1; i <= Math.ceil(currentMessages / messagesPerPage); i++) {
+	for (let i = 1; i <= Math.ceil(currentPosts / postsPerPage); i++) {
 		pageNumbers.push(i);
 	}
-	console.log(message);
-	console.log(currentMessages);
-	console.log(pageNumbers.length);
+	const paginate =(pageNumber)=>{
+		setCurrentPage(pageNumber)
+	}
+
+	// console.log(indexOfLastPosts); //5
+	// console.log(indexOfFirstPosts); //0
+	// console.log(currentPosts); //5
+	// console.log(pageNumbers.length);
 	return (
 		<div>
-			{currentMessages.map((item) => {
+			{currentPosts.map((item) => {
 				return <div key={item.id}>
 					<SingleMessage  {...item}/>
-					{/*<Paginate messagesPerPage={pageNumbers} totalMessages={message}/>*/}
-					<ul>
-						{pageNumbers.map((item)=>{
-							return	<li key={item.id}>
-								<a href="!#">{item}</a>
-							</li>
-						})}
-					</ul>
 				</div>;
 			})}
+			<Paginate postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
 		</div>
 	);
 };
