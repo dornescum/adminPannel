@@ -17,7 +17,7 @@ const AboutCompany = () => {
 		setCompany(e.target.value);
 	};
 	const handleEmail = (e) => {
-		setEmail(e.target.value);
+			setEmail(e.target.value);
 	};
 	const handlePhone = (e) => {
 		setPhone(e.target.value);
@@ -42,12 +42,12 @@ const AboutCompany = () => {
 				<div>
 					<label htmlFor="company" id="company-label" data-testis="company-label">Company</label>
 					<input type="text" placeholder="company" id="company" value={company} onChange={handleCompany}
-						   data-testid="company-input"/>
+						   data-testid="company-input"  required={true}/>
 				</div>
 				<div>
 					<label htmlFor="emai" data-testis="email-label">Email</label>
 					<input type="text" placeholder="email" id="email" value={email} onChange={handleEmail}
-						   data-testid="email-input"/>
+						   data-testid="email-input"  required={true}/>
 				</div>
 				<div>
 					<label htmlFor="phone" data-testid="phone-label">Phone</label>

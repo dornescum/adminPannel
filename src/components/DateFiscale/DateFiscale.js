@@ -2,18 +2,20 @@ import React, {useState} from 'react';
 import AboutCompany from "./AboutCompany";
 import BankContact from "./BankContact";
 import {Container} from "../UIElements/Container";
+import {Button} from "../UIElements/Button";
 import styled from "styled-components";
 
 
 const DateFiscale = () => {
 	const [showAbout, setShowAbout] = useState(true);
-	const [showBank, setShowBank] = useState(true);
+	const [showBank, setShowBank] = useState(false);
 	const handleAboutInfo =()=>{
-		setShowAbout(!showAbout);
+		setShowAbout(true);
+		setShowBank(false);
 	}
 	const handleBankInfo =()=>{
-		setShowBank(!showBank);
-		setShowAbout(!showAbout);
+		setShowBank(true);
+		setShowAbout(false);
 	}
 	return (
 		<Container >
@@ -21,8 +23,9 @@ const DateFiscale = () => {
 				<ul>
 					<li>
 						<div>
-							<button onClick={handleBankInfo}>About Company</button>
-							<button onClick={handleBankInfo}>Bank Details</button>
+
+							<Button bg='var(--light-blue)' onClick={handleAboutInfo} className={showAbout ? 'active-link': ''}>About Company</Button>
+							<Button bg='var(--light-blue)' onClick={handleBankInfo} className={showBank ? 'active-link': ''}>Bank Details</Button>
 						</div>
 					</li>
 				</ul>
@@ -38,8 +41,5 @@ const BtnHolder = styled.div`
 padding: 1rem 2rem;
   ul {
 	list-style-type: none;
-  }
-  button {
-	border:1px solid red;
   }
 `

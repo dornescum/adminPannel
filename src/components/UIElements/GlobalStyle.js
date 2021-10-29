@@ -46,5 +46,8 @@ const GlobalStyle = createGlobalStyle`
     --font-lg: 1.4rem;
   }
 
+  .active-link {
+	background: var(--blue) !important;
+  }
 `
 export default GlobalStyle;

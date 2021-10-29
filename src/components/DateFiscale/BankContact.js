@@ -11,6 +11,8 @@ const BankContact = () => {
 	const [iban, setIban] = useState('');
 	const [message, setMessage] = useState('');
 	const [county, setCounty] = useState('');
+	const [checkedInput, setCheckedInput] = useState(false);
+
 
 	const handleBank = (e) => {
 		setBank(e.target.value);
@@ -39,13 +41,27 @@ const BankContact = () => {
 	const handleCounty = (e) => {
 		setCounty(e.target.value);
 	};
+	const handleChecked = () => {
+		setCheckedInput(true);
+	};
+
 	const handleBankForm = (e) => {
 		e.preventDefault();
+		if (!checkedInput){
+			alert('please check to submit')
+		} else if (checkedInput){
+			setBank('');
+			setIban('');
+			setMessage('');
+			setCounty('');
+			setCheckedInput(false);
+		}
+
 		const data = {bank, iban, message, county};
-		setBank('');
-		setIban('');
-		setMessage('');
-		setCounty('');
+		// setBank('');
+		// setIban('');
+		// setMessage('');
+		// setCounty('');
 		console.log(data);
 	};
 
@@ -55,12 +71,12 @@ const BankContact = () => {
 				<div>
 					<label htmlFor="bank" id="bank-label" data-testid="bank-label">Bank</label>
 					<input type="text" placeholder="bank" id="bank" value={bank} onChange={handleBank}
-						   data-testid="company-input"/>
+						   data-testid="company-input" required={true}/>
 				</div>
 				<div>
 					<label htmlFor="iban" id="iban-label" data-testid="iban-label">Iban</label>
-					<input type="text" placeholder="iban" id="iban" value={iban} onChange={handleIban}
-						   data-testid="company-input"/>
+					<input type="number" placeholder="iban" id="iban" value={iban} onChange={handleIban}
+						    required={true}/>
 				</div>
 				<div>
 					<label htmlFor="message" id="message-label" data-testid="message-label">Message</label>
@@ -86,11 +102,11 @@ const BankContact = () => {
 					{/*<p>I will sell all your info to the highest bitter</p>*/}
 					<ul>
 						<li>
-							<input type="checkbox" data-testid="checkbox-bank"/>
+							<input type="checkbox" data-testid="checkbox-bank" value={checkedInput}  onChange={handleChecked}/>
 						</li>
 						<li>
 							<a href="!#" data-testid="agreed-selling">I will sell all your info to the highest
-								bitter</a>
+								bidder</a>
 						</li>
 					</ul>
 				</div>

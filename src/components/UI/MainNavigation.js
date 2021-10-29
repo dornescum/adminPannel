@@ -5,7 +5,7 @@ import Avatar from "../UIElements/Avatar";
 
 import styled from 'styled-components';
 import {FiMenu} from "react-icons/fi";
-import {FaChevronRight, FaPlay, FaShare, FaSignOutAlt} from "react-icons/fa";
+import { FaSignOutAlt} from "react-icons/fa";
 // FaSignOutAlt
 import image from '../../assets/img/Eva.jpg'
 
