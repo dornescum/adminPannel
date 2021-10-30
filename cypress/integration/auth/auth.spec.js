@@ -42,7 +42,7 @@ describe('first test', ()=>{
 	});
 	it('should open menu on click hamburger icon ', function () {
 		// cy.viewport(1280, 720)
-		cy.pause()
+		// cy.pause()
 		cy.get('#hamburger > svg').click()
 	});
 	it('should alert on Go Here', function () {
@@ -56,7 +56,13 @@ describe('first test', ()=>{
 		cy.contains("Profile").should('exist')
 	});
 	it('login works => redirect 3000', function () {
+
 		cy.contains('Login').click()
 		cy.url().should('include', '/')
+	});
+	it('should pass login verifcation', function () {
+		cy.get('[placeholder="Name"]').type(Cypress.env('user_name'));
+		cy.get('[placeholder="Email"]').type(Cypress.env('password'));
+		cy.get('.sc-bqyKOL').click();
 	});
 })
