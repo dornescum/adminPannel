@@ -3,7 +3,11 @@ import styled from "styled-components";
 import {Form} from "../UIElements/Form";
 import {FormContainer} from "../UIElements/FormContainer";
 
+const num = [1,2,3];
 
+const newNum = num.find((n)=> n ===1);
+
+console.log(newNum);
 
 
 const BankContact = () => {
