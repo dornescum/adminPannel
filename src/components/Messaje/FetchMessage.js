@@ -38,7 +38,7 @@ const FetchMessage = () => {
 	// console.log(currentPosts); //5
 	// console.log(pageNumbers.length);
 	return (
-		<div>
+		<div id="fetch-messages">
 			{currentPosts.map((item) => {
 				return <div key={item.id}>
 					<SingleMessage  {...item}/>

@@ -3,17 +3,10 @@
 
 describe('first test', ()=>{
 	 beforeEach(()=>{
-		 // eslint-disable-next-line no-undef
-		 // cy.visit('https://dornescu.ro')
 		 cy.visit('/')
-		 // cy.viewport("ipad-mini")
-		 // cy.viewport("macbook-13")
 	 })
 	it('test', function () {
-		// eslint-disable-next-line no-undef
 		cy.get("p")
-			// .should('have.text', 'Log In')
-		// throw new Error('whoops')
 	});
 	it('should have login button on ipad mini', function () {
 		// eslint-disable-next-line no-undef

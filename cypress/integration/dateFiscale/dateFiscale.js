@@ -12,18 +12,21 @@ describe('date fiscale',()=>{
 	})
 	it('should find ul and check for 4 li', function () {
 		sidebar.sidebarAction();
-		cy.get(' :nth-child(4) > a').click();
+		// cy.get(' :nth-child(4) > a').click();
+		cy.chooseLink(4);
 		cy.url().should('include', 'date-fiscale')
 	});
 	it('should input text and send form', function () {
 		sidebar.sidebarAction();
-		cy.get(' :nth-child(4) > a').click();
+		// cy.get(' :nth-child(4) > a').click();
+		cy.chooseLink(4);
 		const completeCompanyTest = new FiscalForm();
 		completeCompanyTest.aboutCompany(Cypress.env("user_name"), Cypress.env("email"),Cypress.env("phone"), Cypress.env("fax"));
 	});
 	it('should input text in bank form and send', function () {
 		sidebar.sidebarAction();
-		cy.get(' :nth-child(4) > a').click();
+		// cy.get(' :nth-child(4) > a').click();
+		cy.chooseLink(4);
 		cy.get('li > div > :nth-child(2)').click();
 		cy.get('[data-testid=company-input]').type(Cypress.env("fax"))
 		cy.get('#iban').type(Cypress.env("phone"))
