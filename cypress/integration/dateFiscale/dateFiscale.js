@@ -23,14 +23,16 @@ describe('date fiscale',()=>{
 		const completeCompanyTest = new FiscalForm();
 		completeCompanyTest.aboutCompany(Cypress.env("user_name"), Cypress.env("email"),Cypress.env("phone"), Cypress.env("fax"));
 	});
-	it('should input text in bank form and send', function () {
+	it.only('should input text in bank form and send', function () {
 		sidebar.sidebarAction();
 		// cy.get(' :nth-child(4) > a').click();
 		cy.chooseLink(4);
 		cy.get('li > div > :nth-child(2)').click();
 		cy.get('[data-testid=company-input]').type(Cypress.env("fax"))
-		cy.get('#iban').type(Cypress.env("phone"))
-		cy.get('#message').type("just a message")
+		cy.get('#iban').type(Cypress.env("phone"));
+		cy.get('#message').type("just a message");
+		// fixme changes back to initial value after select
+		cy.get('#county').select("mango").wait(2000);
 		cy.get('[data-testid=checkbox-bank]').click();
 		cy.get('[data-testid=submit-btnBank] > button').click();
 
