@@ -10,21 +10,6 @@ import Paginate from "./Paginate";
 import './mesaje.css'
 
 const Mesaje = () => {
-	// console.log(messages);
-	// const [users, setUsers] = useState(messages.slice(0, 200));
-	// const [pageNumber, setPageNumber] = useState(0);
-	//
-	// const userPerPage = 10;
-	// const pagesVisited = pageNumber * userPerPage;
-	// const displayUsers = users.slice(pagesVisited, pagesVisited + userPerPage).map((user)=>{
-	// 	return <FetchMessage
-	// 		first_name={user.first_name} last_name={user.last_name}
-	// 		date={user.date} message={user.text} key={user.id} id={user.id}/>
-	// })
-	// const pageCount =Math.ceil(users.length /userPerPage );
-	// const changePage =({selected})=>{
-	// 	setPageNumber(selected)
-	// }
 
 	return (
 		<Container>

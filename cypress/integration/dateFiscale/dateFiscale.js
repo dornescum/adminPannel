@@ -23,7 +23,7 @@ describe('date fiscale',()=>{
 		const completeCompanyTest = new FiscalForm();
 		completeCompanyTest.aboutCompany(Cypress.env("user_name"), Cypress.env("email"),Cypress.env("phone"), Cypress.env("fax"));
 	});
-	it.only('should input text in bank form and send', function () {
+	it('should input text in bank form and send', function () {
 		sidebar.sidebarAction();
 		// cy.get(' :nth-child(4) > a').click();
 		cy.chooseLink(4);
