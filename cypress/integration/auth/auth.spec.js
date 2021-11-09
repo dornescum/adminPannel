@@ -54,7 +54,7 @@ describe('first test', ()=>{
 		cy.url().should('include', '/')
 	});
 	it('should pass login verifcation', function () {
-		cy.get('[placeholder="Name"]').type(Cypress.env('user_name'));
+		cy.get('[placeholder="Name"]').type(Cypress.env('name'));
 		cy.get('[placeholder="Email"]').type(Cypress.env('password'));
 		cy.get('.sc-bqyKOL').click();
 	});

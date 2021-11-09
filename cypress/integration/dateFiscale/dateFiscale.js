@@ -8,6 +8,7 @@ describe('date fiscale',()=>{
 	const loginFunc = new Login_PO();
 	const sidebar= new SideBar_PO();
 	beforeEach(()=>{
+		cy.viewport("macbook-16");
 		loginFunc.login();
 	})
 	it('should find ul and check for 4 li', function () {
@@ -21,7 +22,7 @@ describe('date fiscale',()=>{
 		// cy.get(' :nth-child(4) > a').click();
 		cy.chooseLink(4);
 		const completeCompanyTest = new FiscalForm();
-		completeCompanyTest.aboutCompany(Cypress.env("user_name"), Cypress.env("email"),Cypress.env("phone"), Cypress.env("fax"));
+		completeCompanyTest.aboutCompany(Cypress.env("name"), Cypress.env("email"),Cypress.env("phone"), Cypress.env("fax"));
 	});
 	it('should input text in bank form and send', function () {
 		sidebar.sidebarAction();
