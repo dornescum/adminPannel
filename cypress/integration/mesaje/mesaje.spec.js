@@ -21,6 +21,16 @@ describe("fetch message", () => {
 	it('should check for post 1', function () {
 		cy.get('#1').should('contain.text', "sunt");
 	});
+	it('should check for post 1', function () {
+	// sidebar.sidebarAction();
+	// cy.get(':nth-child(6) > a').click();
+	cy.intercept({
+		method: "GET",
+		url:"**/posts/1"
+	}).as("getPost");
+	cy.wait("@getPosts").its("response.status").should("eq", 200);
+	cy.get("#fetch-messages > 1");
+});
 });
 
 
