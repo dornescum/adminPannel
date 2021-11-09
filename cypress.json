@@ -1,0 +1,10 @@
+{
+  "baseUrl": "https://localHost:3000",
+  "env": {
+    "name": "Mimi",
+    "password": "password",
+    "fax": "123456",
+    "phone": "123456",
+    "email": "email@.com"
+  }
+}
