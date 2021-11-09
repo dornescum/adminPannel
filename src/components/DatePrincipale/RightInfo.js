@@ -57,21 +57,15 @@ const someInfo =[
 
 const RightInfo = () => {
 	return (
-		<RightContainer>
+		<RightContainer id='right-container'>
 			<h1>some more info</h1>
-			{/*<CardHolder layout="column">*/}
 				{someInfo.map((el)=>{
-					return <CardHolder layout="column" key={el.id}>
+					return <CardHolder layout="column" key={el.id} id={el.id}>
 						<h3>{el.info}</h3>
 						<img src={el.img} alt={el.info}/>
 						<p>{el.text}</p>
 					</CardHolder>
 				})}
-
-			{/*</CardHolder>*/}
-
-
-
 		</RightContainer>
 	);
 };
@@ -86,7 +80,10 @@ const RightContainer = styled.div`
   align-content: center;
   overflow: scroll;
   height: 40rem;
-  padding-top: 50rem;
+  //padding-top: 50rem;
+  h1 {
+	text-align: center;
+  }
 `;
 
 const CardHolder = styled.article`
@@ -106,9 +103,20 @@ const CardHolder = styled.article`
     height: 40%;
     object-fit: cover;
   }
-
+  @media (max-width: 1024px) {
+    margin: 15px;
+    padding:5px;
+    width: 93%;
+  }
   @media (max-width: 768px) {
-    flex-direction: column;
+    margin: 15px;
+    padding:5px;
+	width: 95%;
+  }
+@media (max-width: 480px) {
+    margin: 15px;
+    padding:5px;
+	width: 90%;
   }
 
 `;

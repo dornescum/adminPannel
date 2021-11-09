@@ -9,7 +9,10 @@ import styled from "styled-components";
 const DatePrincipale = () => {
 	return (
 		<div>
-			<TopInfo>
+			<Header id='header-datePricipale'>
+				<h1>some text</h1>
+			</Header>
+			<TopInfo id='top-info'>
 				<RightInfo/>
 				<LeftInfo/>
 			</TopInfo>
@@ -24,4 +27,13 @@ export default DatePrincipale;
 const TopInfo = styled.div`
   display: flex;
   justify-content: center;
+  height: 40rem;
+  @media (max-width: 768px) {
+  flex-direction: column;
 `;
+const Header = styled.header`
+  h1 {
+    text-align: center;
+  }
+
+`
