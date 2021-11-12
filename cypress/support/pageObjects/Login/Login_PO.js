@@ -5,7 +5,8 @@ class Login {
 		cy.visit('/');
 		cy.get('[placeholder="Name"]').type(Cypress.env('name'));
 		cy.get('[placeholder="Email"]').type(Cypress.env('password'));
-		cy.get('.sc-bqyKOL').click();
+		// cy.get('.sc-bqyKOL').click();
+		cy.get('.sc-dIUeWJ').click();
 	}
 }
 export default Login;

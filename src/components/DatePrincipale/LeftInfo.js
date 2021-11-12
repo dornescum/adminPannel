@@ -24,6 +24,7 @@ const LeftInfo = () => {
 	}, []);
 	return (
 		<LeftContainer id="left-container">
+			<h4 data-cy='sub-title'>Reviews about my work</h4>
 			<ol>
 				{!posts && <p>Loading ...</p>}
 				{/*{posts.map((message) => <li key={message.id}>{message.title}</li>)}*/}
@@ -40,6 +41,10 @@ const LeftContainer = styled.div`
   width: 100%;
   height: 40rem;
   overflow: scroll;
+
+  h4 {
+		padding: 0 0 .5rem 1.5rem;
+  }
 
   ol {
     //list-style-type: none;

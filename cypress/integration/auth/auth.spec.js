@@ -1,9 +1,13 @@
 /* eslint-disable */
 /// <reference types="cypress" />
+import Login_PO from "../../support/pageObjects/Login/Login_PO";
+
 
 describe('first test', ()=>{
+	const loginFunc = new Login_PO();
 	 beforeEach(()=>{
-		 cy.visit('/')
+		 cy.visit('/');
+		 loginFunc.login();
 	 })
 	it('test', function () {
 		cy.get("p")
