@@ -9,8 +9,8 @@ import styled from "styled-components";
 const DatePrincipale = () => {
 	return (
 		<div>
-			<Header id='header-datePricipale'>
-				<h1>some text</h1>
+			<Header id='header-datePricipale' data-testid='test1'>
+				<h1 data-testid='test'>some text</h1>
 			</Header>
 			<TopInfo id='top-info'>
 				<RightInfo/>
