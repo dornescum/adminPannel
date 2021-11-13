@@ -16,7 +16,6 @@ const DatePrincipale = () => {
 				<RightInfo/>
 				<LeftInfo/>
 			</TopInfo>
-
 			<InfoAd/>
 		</div>
 	);
