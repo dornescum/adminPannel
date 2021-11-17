@@ -1,11 +1,14 @@
 /* eslint-disable */
 /// <reference types="cypress" />
 import Login_PO from "../../support/pageObjects/Login/Login_PO";
+import SideBar_PO from "../../support/pageObjects/Login/SideBar_PO";
 
 
 describe('first test', ()=>{
 	const loginFunc = new Login_PO();
-	 beforeEach(()=>{
+	const sidebar= new SideBar_PO();
+
+	beforeEach(()=>{
 		 cy.visit('/');
 		 loginFunc.login();
 	 })
@@ -23,13 +26,11 @@ describe('first test', ()=>{
 	it('should 2 input on iphone xr', function () {
 		// eslint-disable-next-line no-undef
 		cy.viewport('iphone-xr')
-		cy.get('input')
+		// cy.get('input')
 	});
-	it('should have title Log In', function () {
-		// cy.contains('Log In')
-		cy.get('[data-testid=title-login]')
-		cy.get('[placeholder="Name"]')
-	});
+
+
+
 	it('should have a div', function () {
 		cy.get('div')
 		cy.get('div#root')
@@ -42,20 +43,11 @@ describe('first test', ()=>{
 		// cy.pause()
 		cy.get('#hamburger > svg').click()
 	});
-	it('should alert on Go Here', function () {
-		// cy.get('p > .active')
-		cy.get('[data-testid=go-here]')
-	});
-	it('should have Profile button disabled', function () {
-		// cy.get(':button').should('be.disabled')
-		// todo dc nu merge should('be.disabled)?
-		// cy.get('.sc-eCstlR > a').should('be.disabled')
-		cy.contains("Profile").should('exist')
-	});
-	it('login works => redirect 3000', function () {
 
-		cy.contains('Login').click()
-		cy.url().should('include', '/')
+	it.only('login works => sidebar logout & return to login page', function () {
+		sidebar.sidebarAction();
+		cy.chooseLink(11, {force: true});
+		cy.get('.backdrop')
 	});
 	it('should pass login verifcation', function () {
 		cy.get('[placeholder="Name"]').type(Cypress.env('name'));

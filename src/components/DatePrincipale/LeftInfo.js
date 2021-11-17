@@ -25,11 +25,11 @@ const LeftInfo = () => {
 	return (
 		<LeftContainer id="left-container">
 			<h4 data-cy='sub-title'>Reviews about my work</h4>
-			<ol>
+			<ul>
 				{!posts && <p>Loading ...</p>}
 				{/*{posts.map((message) => <li key={message.id}>{message.title}</li>)}*/}
 				{posts.map((message) => <SingleInfo id={message.id} title={message.title} key={message.id}/>)}
-			</ol>
+			</ul>
 		</LeftContainer>
 	);
 };
@@ -37,7 +37,7 @@ const LeftInfo = () => {
 export default LeftInfo;
 
 const LeftContainer = styled.div`
-  background: lightyellow;
+  background: #ffffff;
   width: 100%;
   height: 40rem;
   overflow: scroll;
@@ -46,7 +46,9 @@ const LeftContainer = styled.div`
 		padding: 0 0 .5rem 1.5rem;
   }
 
-  ol {
-    //list-style-type: none;
+  ul {
+    list-style-type: none;
+	padding: .2rem;
   }
 `;
+
